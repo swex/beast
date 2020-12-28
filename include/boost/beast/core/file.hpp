@@ -15,6 +15,8 @@
 #include <boost/beast/core/file_posix.hpp>
 #include <boost/beast/core/file_stdio.hpp>
 #include <boost/beast/core/file_win32.hpp>
+#include <boost/beast/core/file_linux.hpp>
+
 
 namespace boost {
 namespace beast {
@@ -31,6 +33,8 @@ struct file : file_stdio
 #else
 #if BOOST_BEAST_USE_WIN32_FILE
 using file = file_win32;
+#elif BOOST_BEAST_USE_LINUX_FILE
+using file = file_linux;
 #elif BOOST_BEAST_USE_POSIX_FILE
 using file = file_posix;
 #else

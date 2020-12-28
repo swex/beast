@@ -33,5 +33,7 @@ using file_body = basic_file_body<file>;
 #ifndef BOOST_BEAST_NO_FILE_BODY_WIN32
 #include <boost/beast/http/impl/file_body_win32.hpp>
 #endif
-
+#ifndef BOOST_BEAST_NO_FILE_BODY_LINUX
+#include <boost/beast/http/impl/file_body_linux.hpp>
+#endif
 #endif
